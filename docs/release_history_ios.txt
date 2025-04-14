@@ -1,0 +1,160 @@
+PDFViewer SDK for iOS - Release notes
+
+1.2.8
+- ENHANCED native code optimized and cleaned up for speed and performances.
+- FIX for dark mode.
+- FIX rendering issues.
+- FIX rendering issues on 32 bit devices.
+- FIX crash issues for some vector rendering.
+
+1.2.7
+- FIX renderings issues.
+
+1.2.6
+- FIX renderings issues.
+- ENHANCED native code optimized and cleaned up for speed and performances.
+- ENHANCED image scaling performance.
+
+1.2.5
+- FIX rendering issues.
+- ENHANCED image scaling performance.
+
+1.2.4
+- FIX rendering issues.
+- FIX rendering issues with some Japanese fonts.
+
+1.2.3
+- FIX rendering issues.
+- FIX page not centered correctly when rotating on single page.
+
+1.2.2
+- FIX combo box crash.
+- FIX rendering issues.
+
+1.2.1
+- FIX image rendering issues.
+- FIX rendering issues.
+- FIX issue that can't scroll down while zoomed on single page.
+
+1.2
+- NEW Support for Xcode 14 and newer version.
+- ENHANCED code optimization.
+- ENHANCED performance for reflow rendering.
+- FIX rendering issues.
+- FIX crash risk on loading font with very long name.
+
+1.1.10
+- ENHANCED transparency group rendering.
+- ENHANCED image scaling performance.
+- ENHANCED native code size optimized.
+- ENHANCED performance for jbig2 decoding.
+- FIX image decoding issues.
+- FIX rendering issues.
+
+1.1.9
+- ENHANCED native code optimized for speed
+- ENHANCED native code size optimization
+- FIX jpx decoder is now more reliable and faster
+- ENHANCED docx rendering when the file contains tables
+
+1.1.8
+- ENHANCED native code optimized and cleaned up for speed and performances
+- ENHANCED PDF/A1 when the core-lib saves/exports file
+- FIX native code improved handling for some special cases previously not correctly managed
+
+1.1.7
+- ENHANCED performance for high quality image scaling.
+- FIX rendering issue for shading.
+
+1.1.6
+- ENHANCED sign as RFC2315 to support PDF/A-2 and PDF/A-3 cleaner support
+- ENHANCED improved PDF/A support during save and export
+- FIX core-lib clean up
+- FIX improved the signature fields when has lock status set
+
+1.1.5
+- NEW double page with first page single vertical 
+- NEW double page vertical 
+- FIX rendering issue
+- FIX single/double tap issue
+- FIX ui adjustment
+
+1.1.4
+- FIX paging issue on single and double pages
+- FIX thumbnail issues on horizontal pages
+- FIX crash issues caused by invalid data
+
+1.1.3
+- NEW GLOBAL.g_disable_text_copy
+- NEW search progress bar
+- FIX checkbox when wrong value is set to the field
+
+1.1.2
+- FIX jpg decoding issue
+- FIX Auto generate checked icon of checkbox when icon of checkbox is empty
+- FIX Code cleanup
+
+1.1.1
+- UPDATE changed native class names to make it compatible with PDFKit.framework by Apple
+- FIX Italian localization
+- FIX Rendering issues
+
+1.1
+- NEW GLOBAL.g_layout_rtol option
+- NEW objsStart support rtol now.
+- UPDATE core lib
+- UPDATE GLOBAL.g_render_mode renamed to GLOBAL.g_view_mode
+- FIX rendering issue for RTOL in dual mode
+- FIX Double page with first page single
+- FIX Zoom scale values
+- FIX Curl / PageView crash
+- FIX Share pdf crash
+- FIX Form Fields background color changed from yellow to light blue
+- FIX Form Fields Text color changed from white to black
+- FIX Embed File crash
+- FIX Polygon and Polyline color palette
+- FIX Stamp crash when size < 0
+- FIX signature issue.
+- FIX layout issue for vertical and horizontal layout.
+
+1.0.4
+- FIX CMYK->RGB conversion may bring to unexpected crash during some special bitmap decoding
+
+1.0.3
+- NEW Method ImportCtx.ImportPage2Page(), which can draw a page from another Document to destination PDF file
+- Document.ImportPage move to ImportCtx.ImportPage()
+- Font mapping improvement.
+- found a memory leak for bitmap scaling(very long time ago to adjust scaling algorithm).
+- added GLOBAL.g_readonly to make the reader in readonly mode
+- FIX readonly pdf
+- FIX attachment file correct index
+- FIX dark mode status bar
+
+1.0.2
+- FIX minor fixes and clean up
+- FIX font loading during framework startup
+- NEW get image data feature
+- NEW pdf's attachment files manager feature
+
+1.0.1
+- FIX bad linearized header loading issue
+- FIX wrong text position in edit text mode
+- FIX object (text and image) selection
+- FIX crashed issue on specific pdf editing
+- FIX stroked text line width
+- FIX wrong format data issue
+- Minor fixes
+- FIX missing outlines issue
+- FIX indirect stream object references issue (on importing context)
+
+1.0.0
+- NEW add polyline feature
+- NEW add polygon feature
+- NEW edit pdf pages content feature
+- ADD support for docx files
+- ADD markup feature for docx files
+- ADD search feature for docx files
+- FIX set/get popup text/subject issue
+- NEW PDFA data and entries generator feature
+- FIX bad linearized header loading issue
+- FIX wrong text position in edit text mod
