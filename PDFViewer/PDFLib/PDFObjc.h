@@ -1914,6 +1914,27 @@ typedef struct _PDF_TEXT_RET_
  */
 -(int)getRotate;
 /**
+ * @brief get rotated CropBox of the page.
+ * this method need an any type of license.
+ * @param rect PDF_RECT pointer to receive the crop box as [left, top, right, bottom] in PDF coordinate.
+ * @return true or false
+ */
+-(bool)getCropBox : (PDF_RECT*)rect;
+/**
+ * @brief get rotated MediaBox of the page.
+ * this method need an any type of license.
+ * @param rect PDF_RECT pointer to receive the media box as [left, top, right, bottom] in PDF coordinate.
+ * @return true or false
+ */
+-(bool)getMediaBox : (PDF_RECT*)rect;
+/**
+ * @brief get rotated ContentBox of the page, which is the bounding box of actual content.
+ * this method need an any type of license.
+ * @param rect PDF_RECT pointer to receive the content box as [left, top, right, bottom] in PDF coordinate.
+ * @return true or false
+ */
+-(bool)getContentBox : (PDF_RECT*)rect;
+/**
  * @brief remove all annotations and display it as normal content on page.
  * this method require premium license.
  * @return true or false
@@ -1994,6 +2015,13 @@ typedef struct _PDF_TEXT_RET_
  * @return char index or -1 failed.
  */
 -(int)objsGetCharIndex:(float)x :(float)y;
+/**
+ * @brief get text char index nearest to point.
+ * @param x point as [x,y] in PDF coordinate.
+ * @param y point as [x,y] in PDF coordinate.
+ * @return char index or -1 failed.
+ */
+-(int)objsGetCharIndex2:(float)x : (float)y;
 /**
  * @brief get image information
  * @param index range:[0, ObjsGetCharCount()-1]
@@ -2386,7 +2414,25 @@ typedef struct _PDF_TEXT_RET_
 -(void)setPGEditorNodeModified:(bool)modified;
 -(RDPDFEditNode *)getPGEditorNode:(int)index;
 -(RDPDFEditNode *)getPGEditorNode:(float)pdfx :(float)pdfy;
+/**
+ * @brief render page with PGEditor.
+ * @param dib DIB object to render. obtained by Global.dibGet().
+ * @param mat Matrix object define scale, rotate, translate operations.
+ * @param quality render quality.
+ * @return true or false.
+ */
 -(bool)renderWithPGEditor:(RDPDFDIB *)dib :(RDPDFMatrix *)mat :(int)quality;
+/**
+ * @brief render page with PGEditor using annotation callback for controlling each annotation's transparency and color.
+ * same as renderWithPGEditor but with a callback invoked for each annotation during rendering.
+ * @param dib DIB object to render. obtained by Global.dibGet().
+ * @param mat Matrix object define scale, rotate, translate operations.
+ * @param callback callback function invoked for each annotation. return value controls transparency and color. must NOT be NULL; passing NULL causes the function to return false.
+ * @param user user defined context pointer passed to callback.
+ * @param quality render quality.
+ * @return true or false.
+ */
+-(bool)renderWithPGEditor1:(RDPDFDIB *)dib :(RDPDFMatrix *)mat :(func_annot_callback)callback :(void *)user :(int)quality;
 -(bool)updateWithPGEditor;
 -(bool)cancelWithPGEditor;
 /**

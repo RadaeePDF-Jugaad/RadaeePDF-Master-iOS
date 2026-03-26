@@ -1632,6 +1632,18 @@ extern uint annotStrikeoutColor;
 {
 	return PDF_Page_getRotate(m_page);
 }
+-(bool)getCropBox : (PDF_RECT *)rect
+{
+	return PDF_Page_getCropBox(m_page, rect);
+}
+-(bool)getMediaBox : (PDF_RECT *)rect
+{
+	return PDF_Page_getMediaBox(m_page, rect);
+}
+-(bool)getContentBox : (PDF_RECT *)rect
+{
+	return PDF_Page_getContentBox(m_page, rect);
+}
 -(bool)flatAnnots
 {
 	return PDF_Page_flate(m_page);
@@ -1665,6 +1677,14 @@ extern uint annotStrikeoutColor;
 -(int)objsGetCharIndex:(float)x :(float)y
 {
     return PDF_Page_objsGetCharIndex(m_page, x, y);
+}
+-(int)objsGetCharIndex2:(float)x :(float)y
+{
+    return PDF_Page_objsGetCharIndex2(m_page, x, y);
+}
+-(int)objsGetCharUnicode:(int)index
+{
+    return PDF_Page_objsGetCharUnicode(m_page, index);
 }
 -(bool)objsGetImageInfo:(int)index :(int *)info
 {
@@ -1854,6 +1874,10 @@ extern uint annotStrikeoutColor;
 -(bool)renderWithPGEditor:(RDPDFDIB *)dib :(RDPDFMatrix *)mat :(int)quality
 {
     return PDF_Page_renderWithPGEditor(m_page, [dib handle], [mat handle], true, quality);
+}
+-(bool)renderWithPGEditor1:(RDPDFDIB *)dib :(RDPDFMatrix *)mat :(func_annot_callback)callback :(void *)user :(int)quality
+{
+    return PDF_Page_renderWithPGEditor1(m_page, [dib handle], [mat handle], callback, user, quality);
 }
 -(bool)updateWithPGEditor
 {

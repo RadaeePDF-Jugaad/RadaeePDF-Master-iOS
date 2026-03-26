@@ -9,6 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "RDVCache.h"
 
+long long AnnotCallbackVB(void* user, PDF_ANNOT annot)
+{
+    PDF_PAGE page = (PDF_PAGE)user;
+    int type = PDF_Page_getAnnotType(page, annot);
+    if (type == 2) return 0x100000000L;//hidden annotation.
+    if (type == 20)
+    {
+        int sta = PDF_Page_getAnnotCheckStatus(page, annot);
+        if (sta <= 0) return 0;//fully transparency.
+    }
+    return 0x200000ff;//blue transparency box.
+}
+
 @implementation RDVCache
 @synthesize x = m_dibx;
 @synthesize y = m_diby;
@@ -105,6 +118,7 @@
     else
     {
         PDF_Page_renderWithPGEditor([page handle],  dib, mat, true, 2);
+        //PDF_Page_renderWithPGEditor1([page handle],  dib, mat, AnnotCallbackVB, m_page, quality);
     }
     Matrix_destroy(mat);
     if (GLOBAL.g_dark_mode && m_status == 1)

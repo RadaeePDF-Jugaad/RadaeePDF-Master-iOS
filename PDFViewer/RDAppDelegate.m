@@ -27,7 +27,8 @@
     
 		//binding to app ID "com.radaee.reader", can active version before "2025".
 		//the version string can be retrieved by Global_getVersion().
-    g_serial = @"05BD5FE0B7190F59B59728BA47442C38212DA1AA51EEF46C5B90A2D8CBDCC4677F8221F12E091BFAB22A8376F8EB1E04";
+    g_serial = @"A4DBD93776CD8C5CF8C77A3B163AA1262BD9AC5C8F24D696588988ECC6706EBE62620F71124A557686A2811D38A2FD22";
+    
     [RDVGlobal Init];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
