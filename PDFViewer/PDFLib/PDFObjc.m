@@ -11,6 +11,20 @@ int z_verbose = 0;
 void z_error(char *m)
 {
 }
+
+long long AnnotCallback(void* user, PDF_ANNOT annot)
+{
+    PDF_PAGE page = (PDF_PAGE)user;
+    int type = PDF_Page_getAnnotType(page, annot);
+    if (type == 2) return 0x100000000L;//hidden annotation.
+    if (type == 20)
+    {
+        int sta = PDF_Page_getAnnotCheckStatus(page, annot);
+        if (sta <= 0) return 0;//fully transparency.
+    }
+    return 0x200000ff;//blue transparency box.
+}
+
 extern uint annotHighlightColor;
 extern uint annotUnderlineColor;
 extern uint annotStrikeoutColor;
@@ -1030,6 +1044,12 @@ extern uint annotStrikeoutColor;
 {
 	return PDF_Page_getAnnotFieldFlag( m_page, m_handle );
 }
+
+-(NSString *)fieldBtnLabel
+{
+	return PDF_Page_getAnnotFieldBtnLabel(m_page, m_handle);
+}
+
 -(NSString *)fieldName
 {
 	char buf[512];
@@ -1611,6 +1631,7 @@ extern uint annotStrikeoutColor;
 -(bool)render:(RDPDFDIB *)dib :(RDPDFMatrix *)mat :(int)quality
 {
     return PDF_Page_render(m_page, [dib handle], [mat handle], true, quality);
+    //return PDF_Page_render1(m_page, [dib handle], [mat handle], AnnotCallback, m_page, quality);
 }
 -(void)renderCancel
 {
@@ -1681,10 +1702,6 @@ extern uint annotStrikeoutColor;
 -(int)objsGetCharIndex2:(float)x :(float)y
 {
     return PDF_Page_objsGetCharIndex2(m_page, x, y);
-}
--(int)objsGetCharUnicode:(int)index
-{
-    return PDF_Page_objsGetCharUnicode(m_page, index);
 }
 -(bool)objsGetImageInfo:(int)index :(int *)info
 {
@@ -1874,10 +1891,7 @@ extern uint annotStrikeoutColor;
 -(bool)renderWithPGEditor:(RDPDFDIB *)dib :(RDPDFMatrix *)mat :(int)quality
 {
     return PDF_Page_renderWithPGEditor(m_page, [dib handle], [mat handle], true, quality);
-}
--(bool)renderWithPGEditor1:(RDPDFDIB *)dib :(RDPDFMatrix *)mat :(func_annot_callback)callback :(void *)user :(int)quality
-{
-    return PDF_Page_renderWithPGEditor1(m_page, [dib handle], [mat handle], callback, user, quality);
+    //return PDF_Page_renderWithPGEditor1(m_page, [dib handle], [mat handle], AnnotCallback, m_page, quality);
 }
 -(bool)updateWithPGEditor
 {
@@ -1904,9 +1918,17 @@ extern uint annotStrikeoutColor;
 {
     return PDF_Page_addFieldCombo(m_page, rect, name, opts);
 }
+-(bool)addFieldCombo2:(const PDF_RECT *)rect :(NSString *)name :(NSArray *)opts :(NSArray *)exps
+{
+    return PDF_Page_addFieldCombo2(m_page, rect, name, opts, exps);
+}
 -(bool)addFieldList:(const PDF_RECT *)rect :(NSString *)name :(NSArray *)opts :(bool)multi_sel
 {
     return PDF_Page_addFieldList(m_page, rect, name, opts, multi_sel);
+}
+-(bool)addFieldList2:(const PDF_RECT *)rect :(NSString *)name :(NSArray *)opts :(NSArray *)exps :(bool)multi_sel
+{
+    return PDF_Page_addFieldList2(m_page, rect, name, opts, exps, multi_sel);
 }
 -(bool)addFieldEditbox:(const PDF_RECT *)rect :(NSString *)name :(bool)multi_line :(bool)password
 {

@@ -1119,15 +1119,6 @@ bool PDF_Page_getCropBox(PDF_PAGE page, PDF_RECT* box);
  *  @return true or false
  */
 bool PDF_Page_getMediaBox(PDF_PAGE page, PDF_RECT* box);
-/**
- *  @brief  get rotated ContentBox, which is the bounding box of actual content on the page.
- *          this method need an any type of license.
- *
- *	@param 	page    returned from PDF_Document_getPage
- *  @param  box PDF_RECT array as [left, top, right, bottom] in PDF coordinate.
- *
- *  @return true or false
- */
 bool PDF_Page_getContentBox(PDF_PAGE page, PDF_RECT* box);
 /**
  *	@brief	close page.
@@ -1164,20 +1155,8 @@ void PDF_Page_renderPrepare(PDF_PAGE page, PDF_DIB dib);
  *	@return	true or false.
  */
 bool PDF_Page_render(PDF_PAGE page, PDF_DIB dib, PDF_MATRIX matrix, bool show_annots, PDF_RENDER_MODE mode);
-/**
- *  @brief  callback function invoked during annotation rendering.
- *          return value controls annotation rendering with transparency and color.
- *          return 0: fully transparent, annotation is hidden.
- *          return 0x100000000: annotation is hidden from rendering.
- *          return 0x2RRGGBBAA: render annotation with RGBA transparency color overlay.
- *          e.g. 0x200000ff renders with blue transparency.
- *
- *  @param  user    user defined context pointer.
- *  @param  annot   annotation handle for the current annotation being rendered.
- *
- *  @return a long long value controlling annotation transparency and color.
- */
 typedef long long (*func_annot_callback)(void* user, PDF_ANNOT annot);
+bool PDF_Page_render1(PDF_PAGE page, PDF_DIB dib, PDF_MATRIX matrix, func_annot_callback callback, void* user, PDF_RENDER_MODE mode);
 
 /**
  *	@brief	cancel render, in mostly, this function called by UI thread, and PDF_Page_render called by another thread.
@@ -1684,7 +1663,7 @@ int PDF_Page_getAnnotFieldType(PDF_PAGE page, PDF_ANNOT annot);
  *          flag&4 : no export.
  */
 int PDF_Page_getAnnotFieldFlag(PDF_PAGE page, PDF_ANNOT annot);
-
+NSString* PDF_Page_getAnnotFieldBtnLabel(PDF_PAGE page, PDF_ANNOT annot);
 /**
  *	@brief get field name of this annotation.
  *			a premium license is needed for this function.
@@ -2979,6 +2958,7 @@ bool PDF_Page_addFieldRadio(PDF_PAGE page, const PDF_RECT* rect, NSString* name,
  *  @return true or false
  */
 bool PDF_Page_addFieldCombo(PDF_PAGE page, const PDF_RECT* rect, NSString* name, NSArray* opts);
+bool PDF_Page_addFieldCombo2(PDF_PAGE page, const PDF_RECT *rect, NSString *name, NSArray *opts, NSArray *exps);
 /**
  *  @brief  add a list field.
  *          this method require premium license.
@@ -2992,6 +2972,7 @@ bool PDF_Page_addFieldCombo(PDF_PAGE page, const PDF_RECT* rect, NSString* name,
  *  @return true or false
  */
 bool PDF_Page_addFieldList(PDF_PAGE page, const PDF_RECT* rect, NSString* name, NSArray* opts, bool multi_sel);
+bool PDF_Page_addFieldList2(PDF_PAGE page, const PDF_RECT *rect, NSString *name, NSArray *opts, NSArray *exps, bool multi_sel);
 /**
  *  @brief  add an editbox field.
  *          this method require premium license.
@@ -3837,19 +3818,6 @@ int PDF_Page_getPGEditorNodeCount(PDF_PAGE page);
 void PDF_Page_setPGEditorModified(PDF_PAGE page, bool modified);
 PDF_EDITNODE PDF_Page_getPGEditorNode1(PDF_PAGE page, int idx);
 PDF_EDITNODE PDF_Page_getPGEditorNode2(PDF_PAGE page, float pdfx, float pdfy);
-/**
- *  @brief  render page with PGEditor using annotation callback.
- *          same as PDF_Page_renderWithPGEditor but with a callback to control each annotation's transparency and color during rendering.
- *
- *	@param 	page 	returned from PDF_Document_getPage
- *	@param 	dib 	returned from Global_dibGet
- *	@param 	matrix 	returned from Matrix_create or Matrix_createScale
- *  @param  callback    callback function invoked for each annotation, return value controls transparency and color. must NOT be NULL; passing NULL causes the function to return false.
- *  @param  user    user defined context pointer passed to callback function.
- *	@param 	quality 	render quality.
- *
- *	@return	true or false.
- */
 bool PDF_Page_renderWithPGEditor1(PDF_PAGE page, PDF_DIB dib, PDF_MATRIX matrix, func_annot_callback callback, void* user, int quality);
 bool PDF_Page_renderWithPGEditor(PDF_PAGE page, PDF_DIB dib, PDF_MATRIX matrix, bool show_annots, int quality);
 bool PDF_Page_updateWithPGEditor(PDF_PAGE page);
