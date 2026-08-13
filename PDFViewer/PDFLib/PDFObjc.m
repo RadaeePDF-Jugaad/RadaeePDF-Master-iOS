@@ -1906,6 +1906,15 @@ extern uint annotStrikeoutColor;
 {
     return PDF_Page_addFieldButton(m_page, rect, name, label, [app handle]);
 }
+-(bool)addFieldButtonSubmit:(const PDF_RECT *)rect :(NSString *)name :(NSString *)label :(NSString *)target :(RDPDFDocForm *)app
+{
+    return PDF_Page_addFieldButtonSubmit(m_page, rect, name, label, target, [app handle]);
+}
+-(bool)addFieldButtonReset:(const PDF_RECT *)rect :(NSString *)name :(NSString *)label :(RDPDFDocForm *)app
+{
+    return PDF_Page_addFieldButtonReset(m_page, rect, name, label, [app handle]);
+}
+
 -(bool)addFieldCheck:(const PDF_RECT *)rect :(NSString *)name :(NSString *)val :(RDPDFDocForm *)app_on :(RDPDFDocForm *)app_off
 {
     return PDF_Page_addFieldCheck(m_page, rect, name, val, [app_on handle], [app_off handle]);

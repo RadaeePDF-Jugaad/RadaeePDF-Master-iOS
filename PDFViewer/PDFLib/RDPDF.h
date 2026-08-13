@@ -2918,6 +2918,9 @@ bool PDF_Page_removeAnnot(PDF_PAGE page, PDF_ANNOT annot);
  *  @return true or false.
  */
 bool PDF_Page_addFieldButton(PDF_PAGE page, const PDF_RECT* rect, NSString* name, NSString* label, PDF_DOC_FORM app);
+bool PDF_Page_addFieldButtonSubmit(PDF_PAGE page, const PDF_RECT* rect, NSString* name, NSString* label, NSString* target, PDF_DOC_FORM app);
+bool PDF_Page_addFieldButtonReset(PDF_PAGE page, const PDF_RECT* rect, NSString* name, NSString* label, PDF_DOC_FORM app);
+
 /**
  *  @brief  add a checkbox field.
  *          this method require premium license.
