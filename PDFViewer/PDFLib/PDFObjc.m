@@ -1703,6 +1703,10 @@ extern uint annotStrikeoutColor;
 {
     return PDF_Page_objsGetCharIndex2(m_page, x, y);
 }
+-(int)objsGetCharUnicode:(int)index
+{
+    return PDF_Page_objsGetCharUnicode(m_page, index);
+}
 -(bool)objsGetImageInfo:(int)index :(int *)info
 {
 	return PDF_Page_objsGetImageInfo(m_page, index, info);
