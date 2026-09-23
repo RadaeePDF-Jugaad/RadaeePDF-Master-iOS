@@ -58,7 +58,7 @@
 		551F8FDC248F3669006CD51E /* UIColorBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 551F8FBA248F3669006CD51E /* UIColorBtn.m */; };
 		551F8FDE248F3669006CD51E /* UIIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 551F8FBC248F3669006CD51E /* UIIconView.m */; };
 		551F8FDF248F3669006CD51E /* DlgAnnotPropLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551F8FBD248F3669006CD51E /* DlgAnnotPropLine.xib */; };
-		553506FB24FDE5E400334EC8 /* libRDDLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553506FA24FDE5E400334EC8 /* libRDDLib.a */; };
+		553506FB24FDE5E400334EC8 /* RDDLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553506FA24FDE5E400334EC8 /* RDDLib.xcframework */; };
 		559AC59E248FA1070099E05E /* RadaeePDFPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AC59C248FA1070099E05E /* RadaeePDFPlugin.m */; };
 		559AC5A1248FA1380099E05E /* RDFormManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AC59F248FA1380099E05E /* RDFormManager.m */; };
 		55B3AA3A24FD0AC300EA0048 /* DOCXObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B3AA3924FD0AC300EA0048 /* DOCXObjc.m */; };
@@ -115,6 +115,7 @@
 		6CC4FD10163EB31700CCBF0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC4FD0F163EB31700CCBF0B /* CoreGraphics.framework */; };
 		6CC4FD18163EB31700CCBF0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4FD17163EB31700CCBF0B /* main.m */; };
 		6CC4FD1C163EB31700CCBF0B /* RDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4FD1B163EB31700CCBF0B /* RDAppDelegate.m */; };
+		AB00010000000000000CD51 /* RDSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB00010200000000000CD51 /* RDSceneDelegate.m */; };
 		6CD915B2169707DD00A4C5EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD915B1169707DD00A4C5EB /* QuartzCore.framework */; };
 		A84CA71624921ABD0082C9DE /* RDMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A84CA71424921ABD0082C9DE /* RDMenu.h */; };
 		A84CA71724921ABD0082C9DE /* RDMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A84CA71524921ABD0082C9DE /* RDMenu.m */; };
@@ -320,7 +321,7 @@
 		551F8FBA248F3669006CD51E /* UIColorBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIColorBtn.m; path = PDFReader/UIColorBtn.m; sourceTree = "<group>"; };
 		551F8FBC248F3669006CD51E /* UIIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIIconView.m; path = PDFReader/UIIconView.m; sourceTree = "<group>"; };
 		551F8FBD248F3669006CD51E /* DlgAnnotPropLine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DlgAnnotPropLine.xib; path = PDFReader/DlgAnnotPropLine.xib; sourceTree = "<group>"; };
-		553506FA24FDE5E400334EC8 /* libRDDLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRDDLib.a; path = PDFLib/libRDDLib.a; sourceTree = "<group>"; };
+		553506FA24FDE5E400334EC8 /* RDDLib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RDDLib.xcframework; path = PDFLib/RDDLib.xcframework; sourceTree = "<group>"; };
 		559AC59C248FA1070099E05E /* RadaeePDFPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadaeePDFPlugin.m; path = RDPlugin/RadaeePDFPlugin.m; sourceTree = "<group>"; };
 		559AC59D248FA1070099E05E /* RadaeePDFPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadaeePDFPlugin.h; path = RDPlugin/RadaeePDFPlugin.h; sourceTree = "<group>"; };
 		559AC59F248FA1380099E05E /* RDFormManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RDFormManager.m; path = RDPlugin/RDFormManager.m; sourceTree = "<group>"; };
@@ -414,6 +415,8 @@
 		6CC4FD19163EB31700CCBF0B /* PDFMaster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFMaster-Prefix.pch"; sourceTree = "<group>"; };
 		6CC4FD1A163EB31700CCBF0B /* RDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDAppDelegate.h; sourceTree = "<group>"; };
 		6CC4FD1B163EB31700CCBF0B /* RDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDAppDelegate.m; sourceTree = "<group>"; };
+		AB00010100000000000CD51 /* RDSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDSceneDelegate.h; sourceTree = "<group>"; };
+		AB00010200000000000CD51 /* RDSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDSceneDelegate.m; sourceTree = "<group>"; };
 		6CD915B1169707DD00A4C5EB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A801AD76227C91AA002DA8B3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		A825B99922831EA2009BD8EB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = it; path = it.lproj/MoreViewPlist.plist; sourceTree = "<group>"; };
@@ -449,7 +452,7 @@
 				5ECF1254240E50B600B873CB /* AVKit.framework in Frameworks */,
 				6CD915B2169707DD00A4C5EB /* QuartzCore.framework in Frameworks */,
 				B6BF30D8183BC57600CCBCB2 /* MediaPlayer.framework in Frameworks */,
-				553506FB24FDE5E400334EC8 /* libRDDLib.a in Frameworks */,
+				553506FB24FDE5E400334EC8 /* RDDLib.xcframework in Frameworks */,
 				6CC4FD0C163EB31700CCBF0B /* UIKit.framework in Frameworks */,
 				6CC4FD0E163EB31700CCBF0B /* Foundation.framework in Frameworks */,
 				6CC4FD10163EB31700CCBF0B /* CoreGraphics.framework in Frameworks */,
@@ -471,7 +474,7 @@
 		551F8F36248F35A9006CD51E /* PDFLib */ = {
 			isa = PBXGroup;
 			children = (
-				553506FA24FDE5E400334EC8 /* libRDDLib.a */,
+				553506FA24FDE5E400334EC8 /* RDDLib.xcframework */,
 				55CC3D7C24FB9AF700B9FF4E /* RDComm.h */,
 				55CC3D7E24FB9AF700B9FF4E /* RDDOCX.h */,
 				55CC3D7F24FB9AF700B9FF4E /* RDPDF.h */,
@@ -800,6 +803,8 @@
 				5E29DCA1249CAB9F006F37E6 /* RDFileCollection */,
 				6CC4FD1A163EB31700CCBF0B /* RDAppDelegate.h */,
 				6CC4FD1B163EB31700CCBF0B /* RDAppDelegate.m */,
+				AB00010100000000000CD51 /* RDSceneDelegate.h */,
+				AB00010200000000000CD51 /* RDSceneDelegate.m */,
 				5E394916262D54D60078828A /* Images.xcassets */,
 				B6CC4D4516E646E300B82BD3 /* UINavigationController+autoRotate.h */,
 				B6CC4D4616E646E300B82BD3 /* UINavigationController+autoRotate.m */,
@@ -1043,6 +1048,7 @@
 				551F8F6F248F3615006CD51E /* PDFLayoutView.m in Sources */,
 				551F8F72248F3615006CD51E /* PDFPopupCtrl.m in Sources */,
 				6CC4FD1C163EB31700CCBF0B /* RDAppDelegate.m in Sources */,
+				AB00010000000000000CD51 /* RDSceneDelegate.m in Sources */,
 				551F8F3F248F35D8006CD51E /* PDFObjc.m in Sources */,
 				55EE9E4624E580C300CC99E3 /* UIPageCellView.m in Sources */,
 				551F8FC5248F3669006CD51E /* MenuTool.m in Sources */,
@@ -1229,7 +1235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-fembed-bitcode-marker";
 				SDKROOT = iphoneos;
@@ -1283,7 +1289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-fembed-bitcode";
 				SDKROOT = iphoneos;
@@ -1302,7 +1308,6 @@
 				DEVELOPMENT_TEAM = 45X2SLBCW8;
 				ENABLE_BITCODE = YES;
 				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_FAST_MATH = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1310,7 +1315,7 @@
 				GCC_PREFIX_HEADER = "PDFViewer/PDFMaster-Prefix.pch";
 				GCC_THREADSAFE_STATICS = NO;
 				INFOPLIST_FILE = "PDFViewer/PDFViewer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/PDFViewer\"",
@@ -1352,7 +1357,7 @@
 				GCC_PREFIX_HEADER = "PDFViewer/PDFMaster-Prefix.pch";
 				GCC_THREADSAFE_STATICS = NO;
 				INFOPLIST_FILE = "PDFViewer/PDFViewer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/PDFViewer\"",
@@ -1421,7 +1426,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PDFViewer/PDFLib",
@@ -1482,7 +1487,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PDFViewer/PDFLib",

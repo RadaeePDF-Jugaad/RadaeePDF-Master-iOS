@@ -12,11 +12,6 @@
 
 @implementation RDAppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
-@synthesize navController;
-@synthesize tabBarController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIBarButtonItem appearance] setTintColor:[RDUtils radaeeIconColor]];
@@ -24,59 +19,21 @@
     [[UIButton appearance] setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [[UIImageView appearance] setTintColor:[RDUtils radaeeIconColor]];
     [[UITableViewCell appearance] setTintColor:[RDUtils radaeeIconColor]];
-    
+
 		//binding to app ID "com.radaee.reader", can active version before "2025".
 		//the version string can be retrieved by Global_getVersion().
     g_serial = @"A4DBD93776CD8C5CF8C77A3B163AA1262BD9AC5C8F24D696588988ECC6706EBE62620F71124A557686A2811D38A2FD22";
-    
+
     [RDVGlobal Init];
 
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    if ([self isPortrait]) {
-        NSLog(@"portrait");
-    }
-    else
-    {
-        NSLog(@"landscape");
-    }
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [RDUtils radaeeWhiteColor];
-    NSMutableArray *localControllesArray = [[NSMutableArray alloc]initWithCapacity:4];
-    RDFileCollectionViewController *ctl = [[RDFileCollectionViewController alloc] initWithNibName:@"RDFileCollectionViewController" bundle:nil];
-    navController = [[UINavigationController alloc] initWithRootViewController:ctl];
-    [localControllesArray addObject:navController];
-    
-    NSString *title4 =[[NSString alloc]initWithFormat:NSLocalizedString(@"More", @"Localizable")];
-    // Do any additional setup after loading the view from its nib.
-    MoreViewController *moreCtl = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
-    navController = [[UINavigationController alloc] initWithRootViewController:moreCtl];
-    UITabBarItem *item3 = [[UITabBarItem alloc] initWithTitle:title4 image:[UIImage imageNamed:@"btn_info"] tag:3 ];
-    moreCtl.tabBarItem = item3;
-    [localControllesArray addObject:navController];
-    
-    tabBarController = [[UITabBarController alloc]init];
-    tabBarController.viewControllers =localControllesArray;
-    
-    // Preloads keyboard so there's no lag on initial keyboard appearance.
-    UITextField *lagFreeField = [[UITextField alloc] init];
-    [self.window addSubview:lagFreeField];
-    [lagFreeField becomeFirstResponder];
-    [lagFreeField resignFirstResponder];
-    [lagFreeField removeFromSuperview];
-    
-    [self customizeAppearance];
-    
-    self.window.rootViewController = self.tabBarController;
-     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)customizeAppearance
+- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options
 {
-    [[UINavigationBar appearance] setTintColor:[RDUtils radaeeIconColor]];
-    [[UITabBar appearance] setTintColor:[RDUtils radaeeIconColor]];
-    [[UIToolbar appearance] setTintColor:[RDUtils radaeeIconColor]];
-    [[NSClassFromString(@"UICalloutBarButton") appearance] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UISceneConfiguration *configuration = [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+    configuration.delegateClass = NSClassFromString(@"RDSceneDelegate");
+    return configuration;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -104,11 +61,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-#pragma mark - Device orientation
-- (BOOL)isPortrait
-{
-    return ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortrait ||
-            [[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortraitUpsideDown);
 }
 @end

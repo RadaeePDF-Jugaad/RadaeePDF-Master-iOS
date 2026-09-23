@@ -1,0 +1,15 @@
+# Xcode build products
+build/
+DerivedData/
+
+# Xcode per-user state
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# macOS
+.DS_Store
+
+# Superseded by RDDLib.xcframework — do not reintroduce
+/PDFViewer/PDFLib/libRDDLib.a
+/Scripts/

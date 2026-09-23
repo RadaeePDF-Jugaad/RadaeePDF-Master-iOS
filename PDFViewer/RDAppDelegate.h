@@ -7,17 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RDFileCollectionViewController.h"
-#import "MoreViewController.h"
 
-@class RDFileTableController;
 @interface RDAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navController;
-
-@property (strong, nonatomic) UITabBarController *tabBarController;
-@property (strong, nonatomic) RDFileCollectionViewController *viewController;
-
-- (BOOL)isPortrait;
 @end
