@@ -12,11 +12,6 @@
 
 @implementation RDAppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
-@synthesize navController;
-@synthesize tabBarController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIBarButtonItem appearance] setTintColor:[RDUtils radaeeIconColor]];
@@ -31,43 +26,10 @@
     
     [RDVGlobal Init];
 
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    if ([self isPortrait]) {
-        NSLog(@"portrait");
-    }
-    else
-    {
-        NSLog(@"landscape");
-    }
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [RDUtils radaeeWhiteColor];
-    NSMutableArray *localControllesArray = [[NSMutableArray alloc]initWithCapacity:4];
-    RDFileCollectionViewController *ctl = [[RDFileCollectionViewController alloc] initWithNibName:@"RDFileCollectionViewController" bundle:nil];
-    navController = [[UINavigationController alloc] initWithRootViewController:ctl];
-    [localControllesArray addObject:navController];
-    
-    NSString *title4 =[[NSString alloc]initWithFormat:NSLocalizedString(@"More", @"Localizable")];
-    // Do any additional setup after loading the view from its nib.
-    MoreViewController *moreCtl = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
-    navController = [[UINavigationController alloc] initWithRootViewController:moreCtl];
-    UITabBarItem *item3 = [[UITabBarItem alloc] initWithTitle:title4 image:[UIImage imageNamed:@"btn_info"] tag:3 ];
-    moreCtl.tabBarItem = item3;
-    [localControllesArray addObject:navController];
-    
-    tabBarController = [[UITabBarController alloc]init];
-    tabBarController.viewControllers =localControllesArray;
-    
-    // Preloads keyboard so there's no lag on initial keyboard appearance.
-    UITextField *lagFreeField = [[UITextField alloc] init];
-    [self.window addSubview:lagFreeField];
-    [lagFreeField becomeFirstResponder];
-    [lagFreeField resignFirstResponder];
-    [lagFreeField removeFromSuperview];
-    
     [self customizeAppearance];
-    
-    self.window.rootViewController = self.tabBarController;
-     [self.window makeKeyAndVisible];
+
+    // The window and root view controllers are created in RDSceneDelegate
+    // (see UIApplicationSceneManifest in PDFViewer-Info.plist).
     return YES;
 }
 
