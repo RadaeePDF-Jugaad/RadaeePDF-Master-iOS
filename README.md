@@ -1,4 +1,6 @@
-# RadaeePDF SDK Master for iOS
+# [Deprecated] RadaeePDF SDK Master for iOS
+
+**Deprecated.** This repository is being decommissioned and is no longer maintained. Use [RadaeePDF-iOS](https://github.com/RadaeePDF-Jugaad/RadaeePDF-iOS) instead.
 
 <img src="https://www.radaeepdf.com/wp-content/uploads/2024/08/solo_butterly_midres.png" style="width:100px;"> 
 
