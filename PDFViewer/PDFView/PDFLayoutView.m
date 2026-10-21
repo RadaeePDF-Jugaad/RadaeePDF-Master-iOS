@@ -1175,11 +1175,11 @@
                 rect.bottom = pt_cur[1].y;
             }
             CGRect rect1 = CGRectMake(rect.left/m_scale_pix,
-                                      rect.bottom/m_scale_pix,
+                                      rect.top/m_scale_pix,
                                       (rect.right - rect.left)/m_scale_pix,
                                       (rect.bottom - rect.top)/m_scale_pix);
             CGContextSaveGState(context);
-            CGAffineTransform tran = CGAffineTransformMake(1, 0, 0, -1, 0, rect.bottom);
+            CGAffineTransform tran = CGAffineTransformMake(1, 0, 0, -1, 0, (rect.top + rect.bottom)/m_scale_pix);
             CGContextConcatCTM(context, tran);
             CGContextDrawImage(context, rect1, m_aimg.CGImage);
             CGContextRestoreGState(context);
