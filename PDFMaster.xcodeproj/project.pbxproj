@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -115,7 +115,6 @@
 		6CC4FD10163EB31700CCBF0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC4FD0F163EB31700CCBF0B /* CoreGraphics.framework */; };
 		6CC4FD18163EB31700CCBF0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4FD17163EB31700CCBF0B /* main.m */; };
 		6CC4FD1C163EB31700CCBF0B /* RDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC4FD1B163EB31700CCBF0B /* RDAppDelegate.m */; };
-		AB00010000000000000CD51 /* RDSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB00010200000000000CD51 /* RDSceneDelegate.m */; };
 		6CD915B2169707DD00A4C5EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD915B1169707DD00A4C5EB /* QuartzCore.framework */; };
 		A84CA71624921ABD0082C9DE /* RDMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A84CA71424921ABD0082C9DE /* RDMenu.h */; };
 		A84CA71724921ABD0082C9DE /* RDMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A84CA71524921ABD0082C9DE /* RDMenu.m */; };
@@ -210,6 +209,7 @@
 		A8CE660524B72DB0009BFEDF /* UILElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CE660424B72DB0009BFEDF /* UILElement.m */; };
 		A8CE660824B73728009BFEDF /* UILShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CE660724B73728009BFEDF /* UILShadowView.m */; };
 		A8D4D94722AA506F00B8D806 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D4D94622AA506F00B8D806 /* Launch Screen.storyboard */; };
+		AB00010000000000000CD51 /* RDSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB00010200000000000CD51 /* RDSceneDelegate.m */; };
 		B69E038D1DF4044A0086B208 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B69E038B1DF4044A0086B208 /* Default-568h@2x.png */; };
 		B69E038E1DF4044A0086B208 /* Default-568h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B69E038C1DF4044A0086B208 /* Default-568h@3x.png */; };
 		B6BF30D8183BC57600CCBCB2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BF30D7183BC57600CCBCB2 /* MediaPlayer.framework */; };
@@ -415,8 +415,6 @@
 		6CC4FD19163EB31700CCBF0B /* PDFMaster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFMaster-Prefix.pch"; sourceTree = "<group>"; };
 		6CC4FD1A163EB31700CCBF0B /* RDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDAppDelegate.h; sourceTree = "<group>"; };
 		6CC4FD1B163EB31700CCBF0B /* RDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDAppDelegate.m; sourceTree = "<group>"; };
-		AB00010100000000000CD51 /* RDSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDSceneDelegate.h; sourceTree = "<group>"; };
-		AB00010200000000000CD51 /* RDSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDSceneDelegate.m; sourceTree = "<group>"; };
 		6CD915B1169707DD00A4C5EB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A801AD76227C91AA002DA8B3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		A825B99922831EA2009BD8EB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = it; path = it.lproj/MoreViewPlist.plist; sourceTree = "<group>"; };
@@ -432,6 +430,8 @@
 		A8CE660624B73728009BFEDF /* UILShadowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILShadowView.h; sourceTree = "<group>"; };
 		A8CE660724B73728009BFEDF /* UILShadowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILShadowView.m; sourceTree = "<group>"; };
 		A8D4D94622AA506F00B8D806 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		AB00010100000000000CD51 /* RDSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDSceneDelegate.h; sourceTree = "<group>"; };
+		AB00010200000000000CD51 /* RDSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RDSceneDelegate.m; sourceTree = "<group>"; };
 		B656580B18DCA15400F40E1D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B656580D18DCA16500F40E1D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B69E038B1DF4044A0086B208 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
